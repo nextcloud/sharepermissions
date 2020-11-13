@@ -3,7 +3,7 @@
 	<id>sharepermissions</id>
 	<name>Share permissions</name>
 	<summary>Allow/disallow sharing based on group membership</summary>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<licence>AGPL</licence>
 	<author>Roeland Djago Douma</author>
 	<namespace>SharePermissions</namespace>
