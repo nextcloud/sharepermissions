@@ -68,7 +68,5 @@ class StorageWrapper extends Wrapper {
 		}
 		$cache = $this->storage->getCache($path, $storage);
 		return new CacheWrapper($cache, $this->user, $this->manager);
-
 	}
-
 }

@@ -54,6 +54,4 @@ class CacheWrapper extends Wrapper {
 
 		return $entry;
 	}
-
-
 }

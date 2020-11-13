@@ -35,7 +35,6 @@ use OCP\Files\Storage\IStorage;
 use OCP\IUserSession;
 
 class Application extends App implements IBootstrap {
-
 	public const APP_ID = 'sharepermissions';
 
 	public function __construct() {
@@ -53,14 +52,14 @@ class Application extends App implements IBootstrap {
 		\OC\Files\Filesystem::addStorageWrapper(
 			'sharepermissions',
 			function ($mountPoint, IStorage $storage) {
-					/** @var IUserSession $userSession */
-					$userSession = $this->getContainer()->get(IUserSession::class);
-					$manager = $this->getContainer()->get(Manager::class);
-					return new StorageWrapper([
-						'storage' => $storage,
-						'loggedInUser' => $userSession->getUser(),
-						'manager' => $manager
-					]);
+				/** @var IUserSession $userSession */
+				$userSession = $this->getContainer()->get(IUserSession::class);
+				$manager = $this->getContainer()->get(Manager::class);
+				return new StorageWrapper([
+					'storage' => $storage,
+					'loggedInUser' => $userSession->getUser(),
+					'manager' => $manager
+				]);
 			},
 			-15
 		);

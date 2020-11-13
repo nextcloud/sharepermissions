@@ -32,7 +32,6 @@ use OCP\IGroupManager;
 use OCP\IUser;
 
 class Manager {
-
 	public const MODE_ALLOW = 0;
 	public const MODE_BLOCK = 1;
 
