@@ -27,6 +27,7 @@ namespace OCA\SharePermissions\Command;
 
 use OCA\SharePermissions\Manager;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -47,21 +48,20 @@ class Mode extends Command {
 	protected function configure() {
 		$this->setName('sharepermissions:mode');
 		$this->setDescription('Change the permission mode (block or allow)');
+		$this->addArgument('mode', InputArgument::REQUIRED, 'Mode to set, must be block or allow');
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output): int {
-		if ($this->manager->getMode() === Manager::MODE_ALLOW) {
-			$output->writeln("<info>The following groups are ALLOWED to share</info>");
+		$mode = $input->getArgument('mode');
+		if ($mode === 'block') {
+			$this->manager->setMode(Manager::MODE_BLOCK);
+			$output->writeln("<info>The new mode is BLOCK</info>");
+		} else if ($mode === 'allow') {
+			$this->manager->setMode(Manager::MODE_ALLOW);
+			$output->writeln("<info>The new mode is ALLOW</info>");
 		} else {
-			$output->writeln("<info>The following groups are BLOCKED from sharing</info>");
-		}
-		$output->writeln('');
-
-		// Output all the groups
-		$groups = $this->manager->getGroups();
-
-		foreach ($groups as $group) {
-			$output->writeln("<info>- " . $group->getUID() . "</info>");
+			$output->writeln("<error>Please provide block or allow</error>");
+			return -1;
 		}
 
 		return 0;
