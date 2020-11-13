@@ -117,11 +117,7 @@ class Manager {
 			$groups = $this->config->getAppValue('groups', '[]');
 			$groups = json_decode($groups, true);
 
-			$userGroups = $this->groupManager->getUserGroups($user);
-
-			$userGroups = array_map(function (IGroup $group) {
-				return $group->getGID();
-			}, $userGroups);
+			$userGroups = $this->groupManager->getUserGroupIds($user);
 
 			if (array_intersect($groups, $userGroups) === []) {
 				$res = $this->getMode() === self::MODE_ALLOW;
