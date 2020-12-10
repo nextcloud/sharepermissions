@@ -3,12 +3,12 @@
 	<id>sharepermissions</id>
 	<name>Share permissions</name>
 	<summary>Allow/disallow sharing based on group membership</summary>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<licence>AGPL</licence>
 	<author>Roeland Djago Douma</author>
 	<namespace>SharePermissions</namespace>
 	<dependencies>
-		<nextcloud min-version="21" max-version="21" />
+		<nextcloud min-version="20" max-version="21" />
 	</dependencies>
 	<types>
 		<filesystem/>
