@@ -27,7 +27,6 @@ namespace OCA\SharePermissions;
 
 use OCP\AppFramework\Services\IAppConfig;
 use OCP\IConfig;
-use OCP\IGroup;
 use OCP\IGroupManager;
 use OCP\IUser;
 

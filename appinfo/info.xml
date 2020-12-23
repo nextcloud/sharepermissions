@@ -3,16 +3,20 @@
 	<id>sharepermissions</id>
 	<name>Share permissions</name>
 	<summary>Allow/disallow sharing based on group membership</summary>
+	<description>Provide a way to provide allow/block lists for sharing based on group membership</description>
 	<version>1.0.0</version>
-	<licence>AGPL</licence>
+	<licence>agpl</licence>
 	<author>Roeland Djago Douma</author>
 	<namespace>SharePermissions</namespace>
-	<dependencies>
-		<nextcloud min-version="20" max-version="21" />
-	</dependencies>
 	<types>
 		<filesystem/>
 	</types>
+	<category>files</category>
+	<website>https://github.com/rullzer/sharepermissions</website>
+	<bugs>https://github.com/rullzer/sharepermissions/issues</bugs>
+	<dependencies>
+		<nextcloud min-version="20" max-version="21" />
+	</dependencies>
 	<commands>
 		<command>OCA\SharePermissions\Command\Show</command>
 		<command>OCA\SharePermissions\Command\Mode</command>
