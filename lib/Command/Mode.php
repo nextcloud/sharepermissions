@@ -56,7 +56,7 @@ class Mode extends Command {
 		if ($mode === 'block') {
 			$this->manager->setMode(Manager::MODE_BLOCK);
 			$output->writeln("<info>The new mode is BLOCK</info>");
-		} else if ($mode === 'allow') {
+		} elseif ($mode === 'allow') {
 			$this->manager->setMode(Manager::MODE_ALLOW);
 			$output->writeln("<info>The new mode is ALLOW</info>");
 		} else {
