@@ -1,4 +1,4 @@
-# Sharempermissions
+# Share permissions
 Provide a way to provide allow/block lists for sharing based on group membership
 
 ## Usage
