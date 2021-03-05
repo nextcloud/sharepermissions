@@ -4,7 +4,7 @@ Provide a way to provide allow/block lists for sharing based on group membership
 ## Usage
 This app currently only works via OCC and has no graphical User Interface.
 
-### Add a group to the sharepermission list
+### Add a group to the permission list
 `occ sharepermissions:add <groupId>`
 
 One example for a group with the groupID `admin` is:
