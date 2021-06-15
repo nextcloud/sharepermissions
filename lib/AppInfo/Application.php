@@ -49,6 +49,7 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function setupWrapper() {
+		$previousLog = \OC\Files\Filesystem::logWarningWhenAddingStorageWrapper(false);
 		\OC\Files\Filesystem::addStorageWrapper(
 			'sharepermissions',
 			function ($mountPoint, IStorage $storage) {
@@ -63,5 +64,6 @@ class Application extends App implements IBootstrap {
 			},
 			-15
 		);
+		\OC\Files\Filesystem::logWarningWhenAddingStorageWrapper($previousLog);
 	}
 }
